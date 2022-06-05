@@ -11,6 +11,9 @@ function App() {
     <AppProvider>
       <div className="App">
         <h1>React Data Management</h1>
+        <div>
+          <p>Context API</p>
+        </div>
         <div className="cards-container">
           <Intervalo />
         </div>
