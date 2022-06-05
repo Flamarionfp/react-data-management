@@ -1,39 +1,26 @@
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import Intervalo from "./components/Intervalo";
 import Media from "./components/Media";
 import Soma from "./components/Soma";
 import Sorteio from "./components/Sorteio";
+import AppProvider from "../src/contexts/AppContext";
 
 function App() {
-  const [min, setMin] = useState(1);
-  const [max, setMax] = useState(10);
-
-  function handleChangeMin(event) {
-    setMin(+event.target.value);
-  }
-
-  function handleChangeMax(event) {
-    setMax(+event.target.value);
-  }
-
   return (
-    <div className="App">
-      <h1>React Data Management</h1>
-      <div className="cards-container">
-        <Intervalo
-          min={min}
-          max={max}
-          handleChangeMax={handleChangeMax}
-          handleChangeMin={handleChangeMin}
-        />
+    <AppProvider>
+      <div className="App">
+        <h1>React Data Management</h1>
+        <div className="cards-container">
+          <Intervalo />
+        </div>
+        <div className="cards-container">
+          <Media />
+          <Soma />
+          <Sorteio />
+        </div>
       </div>
-      <div className="cards-container">
-        <Media min={min} max={max} />
-        <Soma min={min} max={max} />
-        <Sorteio min={min} max={max} />
-      </div>
-    </div>
+    </AppProvider>
   );
 }
 

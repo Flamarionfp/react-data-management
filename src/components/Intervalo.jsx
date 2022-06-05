@@ -1,10 +1,12 @@
 import './Intervalo.css'
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from './Card'
+import { AppContext } from '../contexts/AppContext'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default props => {
-  const { min, max, handleChangeMin, handleChangeMax } = props
+  const { min, max, handleChangeMin, handleChangeMax } = useContext(AppContext)
+
   return (
     <Card title="Intervalo de Números" red>
       <div className="Intervalo">
