@@ -23,6 +23,9 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <h1>React Data Management</h1>
+        <div>
+          <p>Redux</p>
+        </div>
         <div className="cards-container">
           <Intervalo
             min={min}
