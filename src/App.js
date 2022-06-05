@@ -20,6 +20,9 @@ function App() {
   return (
     <div className="App">
       <h1>React Data Management</h1>
+      <div>
+        <p>Traditional</p>
+      </div>
       <div className="cards-container">
         <Intervalo
           min={min}
