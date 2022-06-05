@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import Intervalo from "./components/Intervalo";
+import Media from "./components/Media";
+import Soma from "./components/Soma";
+import Sorteio from "./components/Sorteio";
 
 function App() {
+  const [min, setMin] = useState(1);
+  const [max, setMax] = useState(10);
+
+  function handleChangeMin(event) {
+    setMin(+event.target.value);
+  }
+
+  function handleChangeMax(event) {
+    setMax(+event.target.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React Data Management</h1>
+      <div className="cards-container">
+        <Intervalo
+          min={min}
+          max={max}
+          handleChangeMax={handleChangeMax}
+          handleChangeMin={handleChangeMin}
+        />
+      </div>
+      <div className="cards-container">
+        <Media min={min} max={max} />
+        <Soma min={min} max={max} />
+        <Sorteio min={min} max={max} />
+      </div>
     </div>
   );
 }
